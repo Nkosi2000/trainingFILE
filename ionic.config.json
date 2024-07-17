@@ -1,0 +1,7 @@
+{
+  "name": "trainingFILE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
