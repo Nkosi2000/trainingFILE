@@ -1,27 +1,43 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-header {
+  background-color: #f8f9fa; /* Light gray background */
+  ion-toolbar {
+    --background: #007bff; /* Primary color for toolbar */
+    ion-title {
+      color: white; /* White text color */
+      font-weight: bold; /* Bold title */
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-content {
+  --background: #ffffff; /* White background for content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card {
+  width: 100%;
+  max-width: 600px; /* Maximum width for the card */
+  margin: 16px auto; /* Center the card and add margin */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border-radius: 8px; /* Rounded corners */
 }
 
-#container a {
-  text-decoration: none;
+ion-card-header {
+  background-color: #007bff; /* Primary color for card header */
+  color: white; /* White text color */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+
+ion-card-title {
+  font-weight: bold; /* Bold title */
+}
+
+ion-card-content {
+  padding: 16px; /* Padding inside card content */
+  font-size: 16px; /* Font size for content */
+  color: #495057; /* Dark gray color for text */
+  text-align: center; /* Center text alignment */
 }

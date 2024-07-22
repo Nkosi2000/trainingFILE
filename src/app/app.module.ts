@@ -9,7 +9,14 @@ import { RouteReuseStrategy } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../environments/environment'; // Import environment
+import { environment } from '../environments/environment'; 
+
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+
+import { FirebaseService } from 'src/app/services/firebase.service';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +29,17 @@ import { environment } from '../environments/environment'; // Import environment
     AngularFirestoreModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FirebaseService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  constructor() {
+    // Initialize Firebase
+    const app = initializeApp(environment.firebaseConfig);
+    const analytics = getAnalytics(app);
+  }
+
+}
