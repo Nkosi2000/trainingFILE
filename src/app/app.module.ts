@@ -11,9 +11,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment'; 
 
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 
@@ -34,12 +31,4 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
-  constructor() {
-    // Initialize Firebase
-    const app = initializeApp(environment.firebaseConfig);
-    const analytics = getAnalytics(app);
-  }
-
-}
+export class AppModule { }

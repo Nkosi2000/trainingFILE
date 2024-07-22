@@ -18,11 +18,13 @@ const routes: Routes = [
   { 
     path: 'home', 
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) 
-  },
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
